@@ -9,20 +9,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
     <div class="navbar-wagon sticky-top navbar-light bg-light">
       <%= link_to cocktails_path, class:"navbar-wagon-link" do %>
-      <h1 class="logo-text">MISTER COCKTAIL</h1>
+      <h1 class="logo-text">MISS COCKTAIL</h1>
       <% end %>
       <div class="navbar-wagon-right">
-        <%= link_to new_cocktail_path, class:"navbar-wagon-link"  do %>
-         Create a Cocktail
-        <% end %>
+        <h5 data-toggle="modal" data-target="#myModal" class:"navbar-wagon-link"> Create a Cocktail</h5>
       </div>
     </div>
     <%= yield %>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+      <div class="footer-copyright">
+        Bottoms up <i class="fas fa-cocktail"></i>
+      </div>
+    </div>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>
