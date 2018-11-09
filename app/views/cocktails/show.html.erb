@@ -1,64 +1,38 @@
-<!-- <div class="wrapper">
-  <div class="container">
-      <div class="cocktail_grid grid">
-        <div class="Cocktail__itemText  grid__item  row">
-          <div class="Cocktail__content  wrapper">
-            <a href="/cocktails" class="Cocktail__close  t-h6 is-active">
-              <span class="Cocktail__closeText">All cocktails</span>
-            </a>
-            <div class="row">
-              <div class="col-sm-6">
-                <h3 class="Cocktail__title"><%= @cocktail.name %></h3>
-                  <div class="Cocktail__copy">
-                    <% @cocktail.doses.each do |dose| %>
-                    <h5>Ingredients</h5>
-                      <ul class="list-unstyled">
-                        <li>
-                          <%= dose.ingredient.name %>
-                          <%= link_to dose_path(dose), method: :delete do %>
-                              <i class="fas fa-trash-alt"></i>
-                          <% end %>
-                        </li>
-                      <% end %>
-                      </ul>
-                    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class:"cocktail-list-link" %>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img src="https://images.unsplash.com/photo-1525575674331-70638740994c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0941006c53ab67396e9db202d201d9f9&auto=format&fit=crop&w=668&q=80" alt="">
-            </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</div> -->
-
-<div class="wrapper">
+<div class="wrapper main-page">
   <div class="container">
     <div class="main-flex-box">
       <div class="flex-content">
-        <a href="/cocktails" class="Cocktail__close  t-h6 is-active">
-          <span class="Cocktail__closeText">All cocktails</span>
-        </a>
+
+        <%= link_to '< All cocktails', cocktails_path, class: "testing" %>
+<!--         <a href="/cocktails" class="Cocktail_close  t-h6 is-active">
+          <span class="Cocktail_closeText">All cocktails</span>
+        </a> -->
         <div class="flex-details">
           <h3 class="Cocktail_title"><%= @cocktail.name %></h3>
+          <h4>Ingredients</h5>
           <% @cocktail.doses.each do |dose| %>
-          <h5>Ingredients</h5>
             <ul class="list-unstyled tex">
               <li>
-                <%= dose.ingredient.name %>
+                <p><%= dose.ingredient.name %>
                 <%= link_to dose_path(dose), method: :delete do %>
                     <i class="fas fa-times icon"></i>
                 <% end %>
+                </p>
               </li>
             <% end %>
             </ul>
-          <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class:"cocktail-list-link" %>
+              <%= simple_form_for @dose do |f| %>
+            <div class="form-group">
+              <%= f.input :description, class:"form-control" %>
+              <%= f.association :ingredient, class:"form-control" %>
+              <%= f.hidden_field :cocktail_id, value: @cocktail.id %>
+              <%= f.submit class:"btn btn-default" %>
+            </div>
+          <% end %>
+          <p><%= link_to "delete cocktail", cocktail_path(@cocktail), class: "testing", method: :delete %></p>
         </div>
       </div>
-      <div class="flex-content-image">
+      <div class="flex-content-image" style="background-image: url('<%= cl_image_path @cocktail.photo %>');">
       </div>
     </div>
   </div>

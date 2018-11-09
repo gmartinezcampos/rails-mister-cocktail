@@ -1,10 +1,7 @@
-<%= form_for @cocktail, html: { class:"form-inline" } do |f| %>
-<div class="form-group">
-    <%= f.label :name, 'name' %>
-    <%= f.text_field :name, class:"form-control input" %>
-    <%= f.submit class:"btn btn-primary submit" %>
+<%= form_for @cocktail do |f| %>
+<div class="form-group form-class justify-content-center">
+    <%= f.text_field :name, class:"form-control input", placeholder: "Cocktail's name" %>
+    <%= f.file_field :photo, class:"upload-button justify-content-center" %>
+    <%= f.submit class:"btn btn-default submit" %>
 </div>
 <% end %>
-
-
-

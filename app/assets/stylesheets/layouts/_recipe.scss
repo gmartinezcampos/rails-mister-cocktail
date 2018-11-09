@@ -1,0 +1,65 @@
+.testing {
+  color: black;
+  margin: 10px;
+
+  &:hover {
+    text-decoration: none;
+    color: #e91791;
+  }
+}
+
+
+.main-flex-box {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+}
+
+.flex-content {
+  width: 50%;
+  background-color: #fff;
+  height: 80vh;
+}
+
+.flex-content-image {
+  width: 50%;
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.flex-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70vh;
+  text-align: center;
+}
+
+i {
+  color: #F2F2F2;
+}
+
+.cocktail_close {
+  text-decoration: none !important;
+  color: black !important;
+  & a:hover {
+    text-decoration: none !important;
+  }
+
+  & a:visited,
+  & a:active {
+    color: red;
+  }
+}
+
+.main-page {
+  background-color: rgba(245, 245, 245, 0.9);
+}
+
+.form-group {
+  margin: 15px;
+}

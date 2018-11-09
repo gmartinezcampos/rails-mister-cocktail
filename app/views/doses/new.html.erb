@@ -1,11 +1,13 @@
-<div class="wrapper">
-  <div class="container">
-    <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <div class="form-group">
-        <%= f.input :description, class:"form-control" %>
-        <%= f.association :ingredient, class:"form-control" %>
-        <%= f.submit class:"btn btn-primary" %>
-      </div>
-    <% end %>
+<div class="wrapper ingredient-form">
+  <div class="container container-ingredient">
+    <div class="flex-ingredient">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <div class="form-group">
+          <%= f.input :description, class:"form-control" %>
+          <%= f.association :ingredient, class:"form-control" %>
+          <%= f.submit class:"btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

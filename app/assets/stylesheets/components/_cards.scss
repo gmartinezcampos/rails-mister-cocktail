@@ -45,3 +45,16 @@
   opacity: 0.1;
 }
 
+.cocktail-list-link {
+  text-decoration: none !important;
+  color: #FFF;
+  font-family: 'Abel', sans-serif;
+  letter-spacing: 2px;
+  &:hover {
+    color: #e91791;
+  }
+}
+
+.icon-delete {
+  font-size: 8px;
+}
